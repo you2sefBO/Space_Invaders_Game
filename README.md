@@ -6,8 +6,8 @@ Ce projet est une réimplémentation du célèbre jeu d'arcade *Space Invaders*,
 Le jeu propose un système de vagues infinies, des ennemis intelligents (Composite), des bonus défensifs (Decorator), et un système de score découplé (Observer).
 
 ## Membres du Groupe
-* [Votre Nom Prénom]
-* [Nom Prénom Binôme si applicable]
+* Benothmen Youssef
+* Madani Ala Eddine
 
 ## Technologies Utilisées
 * **Langage :** Java 17
