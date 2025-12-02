@@ -1,0 +1,54 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mygame.spaceinvaderspatterns;
+
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+/**
+ *
+ * @author YOUSSEF
+ */
+
+public class Projectile {
+    private double x, y;
+    private double speed = 10.0;
+    private boolean active = true;
+    private boolean isEnemy = false; 
+
+    public Projectile(double x, double y, boolean isEnemy) {
+        this.x = x;
+        this.y = y;
+        this.isEnemy = isEnemy;
+    }
+
+    public void update() {
+        if (isEnemy) {
+            y += 5.0; 
+            if (y > 600) active = false;
+        } else {
+            y -= 10.0;
+            if (y < 0) active = false;
+        }
+    }
+
+    public void draw(GraphicsContext gc) {
+        if (isEnemy) {
+            gc.setFill(Color.RED);  
+            gc.fillOval(x, y, 8, 8); 
+        } else {
+            gc.setFill(Color.YELLOW); 
+            gc.fillRect(x, y, 5, 15);
+        }
+    }
+
+    public boolean isEnemyShot() { return isEnemy; }
+    public boolean isActive() { return active; }
+    public void deactivate() { active = false; }
+    
+    public double getX() { return x; }
+    public double getY() { return y; }
+    public double getWidth() { return isEnemy ? 8 : 5; }
+    public double getHeight() { return isEnemy ? 8 : 15; }
+}
